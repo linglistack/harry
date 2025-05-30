@@ -3,7 +3,7 @@ import WatchNow from '../components/sections/WatchNow';
 
 const WatchNowPage = () => {
   return (
-    <main>
+    <main className="with-padding">
       <WatchNow />
     </main>
   );

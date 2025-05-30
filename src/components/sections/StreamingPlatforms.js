@@ -33,7 +33,7 @@ const StreamingPlatforms = () => {
   ];
 
   return (
-    <section className="streaming-platforms">
+    <section className="streaming-platforms no-top-padding">
       <div className="container">
         
         <div className="platforms-container">

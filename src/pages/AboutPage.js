@@ -3,7 +3,7 @@ import About from '../components/sections/About';
 
 const AboutPage = () => {
   return (
-    <main>
+    <main className="with-padding">
       <About />
     </main>
   );

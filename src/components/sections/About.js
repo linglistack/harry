@@ -6,10 +6,7 @@ const About = () => {
   return (
     <section className="about">
       <div className="container">
-        <SectionTitle 
-          title="About Harry Potter" 
-          subtitle="The boy who lived, comes to die."
-        />
+      
         
         <div className="about-content">
           <div className="about-image">

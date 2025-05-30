@@ -1,11 +1,16 @@
 .streaming-platforms {
     background-color: #0a0a0a;
-    padding: 60px 0;
+    padding: 40px 0 60px 0;
     text-align: center;
 }
 
+.no-top-padding {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
 .platforms-container {
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 .platforms-section {

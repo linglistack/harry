@@ -4,7 +4,7 @@ import StreamingPlatforms from '../components/sections/StreamingPlatforms';
 
 const HomePage = () => {
   return (
-    <main>
+    <main className="home-page no-spacing">
       <Hero />
       <StreamingPlatforms />
     </main>

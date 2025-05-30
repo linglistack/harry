@@ -33,21 +33,15 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <div className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}></div>
+      
       <div className="container header-container">
-        <div className="logo">
-          <Link to="/">
-            <div className="logo-content">
-              <h1>HARRY POTTER</h1>
-            </div>
-          </Link>
-        </div>
-        
-        <div className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        
         <nav className={`nav ${mobileMenuOpen ? 'active' : ''}`}>
           <ul>
             <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
@@ -56,7 +50,31 @@ const Header = () => {
             <li><Link to="/game" className={location.pathname === '/game' ? 'active' : ''}>Game</Link></li>
             <li><Link to="/watch" className={location.pathname === '/watch' ? 'active' : ''}>Watch Now</Link></li>
           </ul>
+          
+          <div className="social-icons">
+            <a href="https://www.facebook.com/harrypottermovie" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/harrypottermovie" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/harrypottermovie" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <i className="fab fa-instagram"></i>
+            </a>
+          </div>
         </nav>
+
+        <div className="social-icons desktop-only">
+          <a href="https://www.facebook.com/harrypottermovie" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/harrypottermovie" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/harrypottermovie" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <i className="fab fa-instagram"></i>
+          </a>
+        </div>
       </div>
     </header>
   );

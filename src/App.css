@@ -29,8 +29,7 @@ body {
 
 .page-content {
   flex: 1;
-  padding-top: 80px;
-  /* To account for fixed header */
+  padding-top: 0;
 }
 
 main {
@@ -114,12 +113,16 @@ img {
   }
 
   .page-content {
-    padding-top: 60px;
+    padding-top: 0;
   }
 
   .container {
     width: 95%;
     padding: 0 15px;
+  }
+
+  .with-padding {
+    padding-top: 40px;
   }
 }
 
@@ -145,4 +148,23 @@ img {
     padding: 10px 25px;
     font-size: 0.9rem;
   }
+}
+
+/* Add a class for pages that need padding */
+.with-padding {
+  padding-top: 80px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-spacing {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-spacing>* {
+  margin: 0;
+  padding: 0;
 }

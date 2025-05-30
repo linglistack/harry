@@ -21,7 +21,7 @@ const CharactersPage = () => {
   ];
 
   return (
-    <main className="characters-page">
+    <main className="with-padding">
       <div className="container">
         <div className="carousel-section">
           <CharacterCarousel characters={characterData} />
