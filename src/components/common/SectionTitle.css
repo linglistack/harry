@@ -1,0 +1,39 @@
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title.centered {
+    text-align: center;
+}
+
+.section-title h2 {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.section-title.centered h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title .subtitle {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-color);
+    opacity: 0.8;
+}

@@ -1,0 +1,541 @@
+.game-section {
+    padding: 20px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Start Screen */
+.game-start {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #d3a625;
+}
+
+.game-title h1 {
+    color: #d3a625;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(211, 166, 37, 0.5);
+}
+
+.game-title p {
+    color: #fff;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.house-emblems {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.house-emblem {
+    width: 120px;
+    height: 120px;
+    transition: all 0.3s ease;
+}
+
+.house-emblem:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.house-emblem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.start-button-container button {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    background-color: #d3a625;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.start-button-container button:hover {
+    background-color: #b48c1f;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Question Screen */
+.game-question {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #d3a625;
+}
+
+.game-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.animation {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.wand {
+    background-image: url('https://static.wikia.nocookie.net/harrypotter/images/7/7e/Elder_Wand.png/revision/latest');
+    animation-name: wandAnimation;
+}
+
+.potion {
+    background-image: url('https://static.wikia.nocookie.net/harrypotter/images/0/0e/Felix_Felicis_Phial.png/revision/latest');
+    animation-name: potionAnimation;
+}
+
+.snitch {
+    background-image: url('https://static.wikia.nocookie.net/harrypotter/images/1/15/Golden_Snitch..png/revision/latest');
+    animation-name: snitchAnimation;
+}
+
+@keyframes wandAnimation {
+    0% {
+        top: -50px;
+        left: 10%;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        top: 110%;
+        left: 80%;
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes potionAnimation {
+    0% {
+        top: -50px;
+        right: 30%;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        top: 110%;
+        right: 10%;
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes snitchAnimation {
+    0% {
+        top: 50%;
+        left: -50px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    50% {
+        top: 30%;
+        left: 50%;
+    }
+
+    100% {
+        top: 20%;
+        left: 110%;
+        opacity: 0;
+    }
+}
+
+.question-number {
+    text-align: center;
+    color: #d3a625;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.timer {
+    height: 6px;
+    background-color: #333;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.timer-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #d3a625, #f8d878);
+    border-radius: 3px;
+    transition: width 1s linear;
+}
+
+.timer-text {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    color: #d3a625;
+    font-size: 0.9rem;
+}
+
+.question-text {
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.question-text h2 {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.answer-option {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(211, 166, 37, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.answer-option:hover {
+    border-color: #d3a625;
+    background-color: rgba(211, 166, 37, 0.1);
+}
+
+.answer-option.selected {
+    border-color: #d3a625;
+    background-color: rgba(211, 166, 37, 0.2);
+}
+
+.answer-option span {
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Result Screen */
+.game-result {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #d3a625;
+}
+
+.result-header h2 {
+    color: #d3a625;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.house-result {
+    margin-bottom: 40px;
+}
+
+.house-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    animation: resultAppear 1s ease;
+}
+
+.house-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.house-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #d3a625;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: resultAppear 1.2s ease;
+}
+
+.house-description {
+    font-size: 1.2rem;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: resultAppear 1.4s ease;
+}
+
+@keyframes resultAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-stats {
+    margin: 40px 0;
+}
+
+.house-points h3 {
+    color: #d3a625;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.house-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.house-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.house-bar-label {
+    width: 100px;
+    text-align: right;
+    color: #fff;
+    font-weight: bold;
+}
+
+.house-bar-wrapper {
+    flex: 1;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.house-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-out;
+}
+
+.house-bar.gryffindor {
+    background: linear-gradient(90deg, #740001, #ae0001);
+}
+
+.house-bar.hufflepuff {
+    background: linear-gradient(90deg, #ecb939, #f0c75e);
+}
+
+.house-bar.ravenclaw {
+    background: linear-gradient(90deg, #0e1a40, #222f5b);
+}
+
+.house-bar.slytherin {
+    background: linear-gradient(90deg, #1a472a, #2a623d);
+}
+
+.house-bar-value {
+    width: 30px;
+    text-align: left;
+    color: #d3a625;
+    font-weight: bold;
+}
+
+.result-actions {
+    margin-top: 40px;
+}
+
+.result-actions button {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    background-color: #d3a625;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.result-actions button:hover {
+    background-color: #b48c1f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .game-start {
+        padding: 30px 20px;
+    }
+
+    .game-title h1 {
+        font-size: 2rem;
+    }
+
+    .game-title p {
+        font-size: 1rem;
+    }
+
+    .house-emblems {
+        gap: 15px;
+    }
+
+    .house-emblem {
+        width: 80px;
+        height: 80px;
+    }
+
+    .start-button-container button {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+
+    .game-question {
+        padding: 20px;
+    }
+
+    .question-text h2 {
+        font-size: 1.3rem;
+    }
+
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+
+    .answer-option {
+        padding: 15px;
+        min-height: 80px;
+    }
+
+    .answer-option span {
+        font-size: 1rem;
+    }
+
+    .game-result {
+        padding: 30px 20px;
+    }
+
+    .result-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .house-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .house-name {
+        font-size: 2rem;
+    }
+
+    .house-description {
+        font-size: 1rem;
+    }
+
+    .house-points h3 {
+        font-size: 1.2rem;
+    }
+
+    .house-bar-container {
+        gap: 5px;
+    }
+
+    .house-bar-label {
+        width: 80px;
+        font-size: 0.9rem;
+    }
+
+    .house-bar-value {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .house-emblem {
+        width: 60px;
+        height: 60px;
+    }
+
+    .question-text h2 {
+        font-size: 1.1rem;
+    }
+
+    .house-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .house-name {
+        font-size: 1.5rem;
+    }
+
+    .house-description {
+        font-size: 0.9rem;
+    }
+}
